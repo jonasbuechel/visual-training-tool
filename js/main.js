@@ -9,9 +9,14 @@ let allPaths = null;
 
 /* GET THE SVG */
 window.addEventListener("load", () => {
+  showRightPanel();
   loadShape('shape');
   showCircle(currentCircle);
   showPaths();
+
+  setTimeout(() => {
+    hideRightPanel();
+  }, 2000)
 });
 
 function loadShape(id) {
@@ -72,21 +77,29 @@ document.addEventListener('keypress', () => {
   showCircle(circleNumber);
 });
 
+function showRightPanel() {
+  document.querySelector('.right').classList.add('right--fullopacity');
+}
+
+function hideRightPanel() {
+  document.querySelector('.right').classList.remove('right--fullopacity');
+}
+
 /* SETTINGS */
 document.querySelector('#color-intensity-blue').addEventListener('input', (event) => {
-  this.updateCircleColor(event.currentTarget.value);
+  updateCircleColor(event.currentTarget.value);
 });
 
 document.querySelector('#color-intensity-red').addEventListener('input', (event) => {
-  this.updatePathColor(event.currentTarget.value);
+  updatePathColor(event.currentTarget.value);
 });
 
 function updateCircleColor(blueValue) {
   circleColor = `rgba(0,0,${blueValue},1)`;
-  this.showCircle(currentCircle);
+  showCircle(currentCircle);
 }
 
 function updatePathColor(redValue) {
   pathColor = `rgba(${redValue},0,0,1)`;
-  this.showPaths();
+  showPaths();
 }

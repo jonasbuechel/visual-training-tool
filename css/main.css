@@ -39,6 +39,7 @@ body {
   transition: opacity 300ms ease-in-out;
 }
 
+.right--fullopacity,
 .right:hover {
   opacity: 1;
 }
