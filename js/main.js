@@ -103,3 +103,19 @@ function updatePathColor(redValue) {
   pathColor = `rgba(${redValue},0,0,1)`;
   showPaths();
 }
+
+/* FULLSCREEN */
+document.querySelector('.js-button-toggle-fullscreen').addEventListener('click', () => {
+  toggleFullScreen();
+});
+
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
