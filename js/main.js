@@ -1,20 +1,24 @@
 /* CONFIGURATION */
-const circleColorVisible = 'rgba(0,0,255,1)';
-const circleColorInvisible = 'rgba(0,0,0,0)';
+let circleColor = 'rgba(0,0,255,1)';
+let circleColorInvisible = 'rgba(0,0,0,0)';
+let pathColor = 'rgba(50,0,0,1)';
 let addMispositioning = false;
 let currentCircle = 0;
 let allCircles = null;
+let allPaths = null;
 
 /* GET THE SVG */
 window.addEventListener("load", () => {
   loadShape('shape');
   showCircle(currentCircle);
+  showPaths();
 });
 
 function loadShape(id) {
   const svgObject = document.getElementById('svg-object').contentDocument;
   const shape = svgObject.getElementById(id);
   allCircles = shape.querySelectorAll('circle');
+  allPaths = shape.querySelectorAll('path');
 }
 
 
@@ -23,13 +27,19 @@ function showCircle(circleNumber) {
   const newCircle = allCircles[circleNumber];
 
   oldCircle.setAttribute('fill', circleColorInvisible);
-  newCircle.setAttribute('fill', circleColorVisible);
+  newCircle.setAttribute('fill', circleColor);
 
   if (addMispositioning === true) {
     addRandomTranslation(newCircle);
   }
 
   currentCircle = circleNumber;
+}
+
+function showPaths() {
+  allPaths.forEach((path) => {
+    path.setAttribute('stroke', pathColor);
+  });
 }
 
 function getRandomCircle(allCircles) {
@@ -61,3 +71,22 @@ document.addEventListener('keypress', () => {
 
   showCircle(circleNumber);
 });
+
+/* SETTINGS */
+document.querySelector('#color-intensity-blue').addEventListener('input', (event) => {
+  this.updateCircleColor(event.currentTarget.value);
+});
+
+document.querySelector('#color-intensity-red').addEventListener('input', (event) => {
+  this.updatePathColor(event.currentTarget.value);
+});
+
+function updateCircleColor(blueValue) {
+  circleColor = `rgba(0,0,${blueValue},1)`;
+  this.showCircle(currentCircle);
+}
+
+function updatePathColor(redValue) {
+  pathColor = `rgba(${redValue},0,0,1)`;
+  this.showPaths();
+}
