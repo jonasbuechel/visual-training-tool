@@ -24,6 +24,7 @@ body {
   height: 100%;
   padding: 50px;
   overflow: visible;
+  pointer-events: none;
 }
 
 .right {
