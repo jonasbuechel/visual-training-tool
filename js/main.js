@@ -1,28 +1,22 @@
 import * as SVG from './modules/svg.js';
+import * as Sidebar from './modules/sidebar.js';
+import * as Fullscreen from './modules/fullscreen.js';
 
 /* GET THE SVG */
 window.addEventListener("load", () => {
-  showRightPanel();
+  Sidebar.show();
   SVG.loadShape('shape');
   SVG.showCircle();
   SVG.showPaths();
 
   setTimeout(() => {
-    hideRightPanel();
+    Sidebar.hide();
   }, 2000)
 });
 
 document.addEventListener('keypress', () => {
   SVG.showNextCircle();
 });
-
-function showRightPanel() {
-  document.querySelector('.right').classList.add('right--fullopacity');
-}
-
-function hideRightPanel() {
-  document.querySelector('.right').classList.remove('right--fullopacity');
-}
 
 /* SETTINGS */
 document.querySelector('#color-intensity-blue').addEventListener('input', (event) => {
@@ -37,16 +31,5 @@ document.querySelector('#color-intensity-red').addEventListener('input', (event)
 
 /* FULLSCREEN */
 document.querySelector('.js-button-toggle-fullscreen').addEventListener('click', () => {
-  toggleFullScreen();
+  Fullscreen.toggle();
 });
-
-
-function toggleFullScreen() {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
-}
