@@ -24,9 +24,16 @@
         <label class="settings__label" for="color-intensity-blue">Blue dot color intensity</label>
         <p class="settings__description">Reduce the color intensity until the blue dot is no longer visible through the red glass.</p>
         <input class="settings__color-intensity" type="range" id="color-intensity-blue" name="color-intensity-blue" min="0" max="255" value="255" step="1">
+
         <label class="settings__label" for="color-intensity-red">Red lines color intensity</label>
         <p class="settings__description">Reduce the color intensity until the red lines are no longer visible through the blue glass.</p>
         <input class="settings__color-intensity" type="range" id="color-intensity-red" name="color-intensity-red" min="0" max="255" value="50" step="1">
+
+        <div class="settings__label">Circle sequence order</div>
+        <div class="settings__checkbox">
+          <input class="settings__checkbox-input js-settings__sequence-order" type="checkbox" id="sequence-order" name="sequence-order">
+          <label class="settings__checkbox-label" for="sequence-order">Reverse circle sequence order</label>
+        </div>
       </div>
       <div class="fullscreen">
         <h2>Fullscreen</h2>

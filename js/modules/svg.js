@@ -7,6 +7,7 @@ let currentCircle = 0;
 let circleColor = 'rgba(0,0,255,1)';
 let circleColorInvisible = 'rgba(0,0,0,0)';
 let pathColor = 'rgba(50,0,0,1)';
+let orderIsRegular = true;
 
 function loadShape(id) {
     const svgObject = document.getElementById('svg-object').contentDocument;
@@ -32,10 +33,14 @@ function showCircle(circleNumber) {
 }
 
 function showNextCircle() {
-    let circleNumber = currentCircle + 1;
+    let circleNumber = orderIsRegular ? currentCircle + 1 : currentCircle - 1;
 
     if (circleNumber > allCircles.length -1) {
         circleNumber = 0;
+    }
+
+    if (circleNumber < 0) {
+        circleNumber = allCircles.length -1;
     }
 
     showCircle(circleNumber);
@@ -47,6 +52,10 @@ function updateCircleColor(blueValue) {
 
 function updatePathColor(redValue) {
     pathColor = `rgba(${redValue},0,0,1)`;
+}
+
+function updateOrder(isRegular) {
+    orderIsRegular = isRegular;
 }
 
 function showPaths() {
@@ -70,4 +79,4 @@ function addRandomTranslation(circleNode) {
     circleNode.setAttribute('transform', `translate(${randomX} ${randomY})`);
 }
 
-export { loadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor };
+export { loadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder };

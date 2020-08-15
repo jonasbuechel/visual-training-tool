@@ -37,3 +37,9 @@ document.querySelector('.js-button-toggle-fullscreen').addEventListener('click',
   Fullscreen.toggle();
 });
 
+/* CIRCLE SEQUENCE ORDER */
+document.querySelector('.js-settings__sequence-order').addEventListener('click', (event) => {
+  event.currentTarget.blur();
+  SVG.updateOrder(!event.currentTarget.checked);
+});
+
