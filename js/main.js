@@ -1,6 +1,7 @@
 import * as SVG from './modules/svg.js';
 import * as Sidebar from './modules/sidebar.js';
 import * as Fullscreen from './modules/fullscreen.js';
+import * as Cursor from './modules/cursor.js';
 
 /* GET THE SVG */
 window.addEventListener("load", () => {
@@ -11,6 +12,7 @@ window.addEventListener("load", () => {
 
   setTimeout(() => {
     Sidebar.hide();
+    Cursor.autoHide();
   }, 2000)
 });
 
@@ -34,3 +36,4 @@ document.querySelector('.js-button-toggle-fullscreen').addEventListener('click',
   event.currentTarget.blur();
   Fullscreen.toggle();
 });
+
