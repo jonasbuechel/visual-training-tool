@@ -16,7 +16,7 @@ function loadShape(id) {
 }
 
 function showCircle(circleNumber) {
-    circleNumber = circleNumber || currentCircle;
+    circleNumber = circleNumber != undefined ? circleNumber : currentCircle;
 
     const oldCircle = allCircles[currentCircle];
     const newCircle = allCircles[circleNumber];
