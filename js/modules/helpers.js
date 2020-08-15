@@ -1,4 +1,4 @@
-function get(maximum, minimum = 0) {
+function getRandomNumber(maximum, minimum = 0) {
     return Math.floor(Math.random() * maximum) + minimum;
 }
 

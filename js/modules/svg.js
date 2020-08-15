@@ -1,4 +1,4 @@
-import * as RandomNumber from './randomnumber.js'
+import { getRandomNumber } from './helpers.js'
 
 let allCircles = null;
 let allPaths = null;
@@ -56,15 +56,15 @@ function showPaths() {
 }
 
 function getRandomCircle(allCircles) {
-    const randomId = RandomNumber.get(allCircles.length);
+    const randomId = getRandomNumber(allCircles.length);
     return allCircles[randomId];
 }
 
 function addRandomTranslation(circleNode) {
     const maximumTranslation = 40;
     const minimumTranslation = 10;
-    const randomX = RandomNumber.get(maximumTranslation, minimumTranslation);
-    const randomY = RandomNumber.get(maximumTranslation, minimumTranslation);
+    const randomX = getRandomNumber(maximumTranslation, minimumTranslation);
+    const randomY = getRandomNumber(maximumTranslation, minimumTranslation);
 
 
     circleNode.setAttribute('transform', `translate(${randomX} ${randomY})`);
