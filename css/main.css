@@ -1,8 +1,12 @@
 :root {
   --vt-color-white: rgba(255,255,255,0.75);
   --vt-color-black: rgba(0,0,0,1);
-  --vt-color-grey: rgba(255,255,255,0.4);
+  --vt-color-grey: rgba(255,255,255,0.3);
+  --vt-color-grey-superlight: rgba(255,255,255,0.05);
   --vt-color-transparent: rgba(0,0,0,0);
+  --vt-sidebar-opacity: 0.25;
+  --vt-sidebar-filter-blur: blur(4px);
+  --vt-animation-speed: 300ms;
 }
 
 
@@ -41,18 +45,21 @@ body {
 .right {
   flex: 0 1 20%;
   padding: 50px;
+  background: var(--vt-color-grey-superlight);
   border-left: 2px solid var(--vt-color-grey);
   color: var(--vt-color-white);
   font-family: sans-serif;
   font-size: 14px;
   font-weight: lighter;
-  opacity: 0.25;
-  transition: opacity 300ms ease-in-out;
+  opacity: var(--vt-sidebar-opacity);
+  filter: var(--vt-sidebar-filter-blur);
+  transition: filter var(--vt-animation-speed) ease-out, opacity var(--vt-animation-speed) ease-out;
 }
 
 .right--fullopacity,
 .right:hover {
   opacity: 1;
+  filter: none;
 }
 
 h1, h2, h3 {
@@ -103,6 +110,7 @@ button:focus{
 .settings__checkbox {
   display: flex;
   align-items: center;
+  padding: 0.25em 0;
 }
 
 .settings__checkbox-input {
