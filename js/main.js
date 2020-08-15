@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
   }, 2000)
 });
 
-document.addEventListener('keypress', () => {
+document.addEventListener('keypress', (event) => {
   SVG.showNextCircle();
 });
 
@@ -30,6 +30,7 @@ document.querySelector('#color-intensity-red').addEventListener('input', (event)
 });
 
 /* FULLSCREEN */
-document.querySelector('.js-button-toggle-fullscreen').addEventListener('click', () => {
+document.querySelector('.js-button-toggle-fullscreen').addEventListener('click', (event) => {
+  event.currentTarget.blur();
   Fullscreen.toggle();
 });
