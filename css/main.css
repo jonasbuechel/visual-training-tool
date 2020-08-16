@@ -80,6 +80,14 @@ p {
   margin-bottom: 1em;
 }
 
+ul, ol {
+  margin-left: 1.25em;
+}
+
+li {
+  padding-bottom: 0.5em;
+}
+
 button {
   background: transparent;
   color: var(--vt-color-white);
