@@ -6,7 +6,7 @@ import * as Cursor from './modules/cursor.js';
 /* GET THE SVG */
 window.addEventListener("load", () => {
   Sidebar.show();
-  SVG.loadShape('shape');
+  SVG.loadShape();
   SVG.showCircle();
   SVG.showPaths();
 

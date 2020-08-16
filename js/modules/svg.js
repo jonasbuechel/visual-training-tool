@@ -1,7 +1,7 @@
 import { getRandomNumber } from './helpers.js'
 
 let allCircles = null;
-let allPaths = null;
+let shapeBorders = null;
 let addMispositioning = false;
 let currentCircle = 0;
 let circleColor = 'rgba(0,0,255,1)';
@@ -9,11 +9,11 @@ let circleColorInvisible = 'rgba(0,0,0,0)';
 let pathColor = 'rgba(50,0,0,1)';
 let orderIsRegular = true;
 
-function loadShape(id) {
+function loadShape() {
     const svgObject = document.getElementById('svg-object').contentDocument;
-    const shape = svgObject.getElementById(id);
+    const shape = svgObject.querySelector('svg');
     allCircles = shape.querySelectorAll('circle');
-    allPaths = shape.querySelectorAll('path');
+    shapeBorders = shape.querySelectorAll('path, line');
 }
 
 function showCircle(circleNumber) {
@@ -59,8 +59,8 @@ function updateOrder(isRegular) {
 }
 
 function showPaths() {
-    allPaths.forEach((path) => {
-        path.setAttribute('stroke', pathColor);
+    shapeBorders.forEach((border) => {
+        border.setAttribute('stroke', pathColor);
     });
 }
 
