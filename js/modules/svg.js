@@ -9,11 +9,34 @@ let circleColorInvisible = 'rgba(0,0,0,0)';
 let pathColor = 'rgba(50,0,0,1)';
 let orderIsRegular = true;
 
-function loadShape() {
-    const svgObject = document.getElementById('svg-object').contentDocument;
-    const shape = svgObject.querySelector('svg');
-    allCircles = shape.querySelectorAll('circle');
-    shapeBorders = shape.querySelectorAll('path, line');
+function ayncLoadShape(id) {
+    return new Promise((resolve, reject) => {
+        const shapeConfig = getShapeConfig(id);
+
+        const object = document.getElementById('svg-object');
+        object.setAttribute('data', shapeConfig.svgUrl);
+
+        object.addEventListener('load', () => {
+            const svg = object.contentDocument;
+            const shape = svg.querySelector('svg');
+            allCircles = shape.querySelectorAll('circle');
+            shapeBorders = shape.querySelectorAll('path, line');
+
+            resolve();
+        });
+    });
+}
+
+function getShapeConfig(id) {
+    let config = {};
+
+    if (id === '8-figure') {
+        config = {
+            svgUrl: 'img/shape.svg',
+        };
+    }
+
+    return config;
 }
 
 function showCircle(circleNumber) {
@@ -79,4 +102,4 @@ function addRandomTranslation(circleNode) {
     circleNode.setAttribute('transform', `translate(${randomX} ${randomY})`);
 }
 
-export { loadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder };
+export { ayncLoadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder };

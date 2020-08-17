@@ -4,9 +4,9 @@ import * as Fullscreen from './modules/fullscreen.js';
 import * as Cursor from './modules/cursor.js';
 
 /* GET THE SVG */
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
   Sidebar.show();
-  SVG.loadShape();
+  await SVG.ayncLoadShape('8-figure');
   SVG.showCircle();
   SVG.showPaths();
 
