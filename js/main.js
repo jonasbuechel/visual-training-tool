@@ -6,7 +6,7 @@ import * as Cursor from './modules/cursor.js';
 /* GET THE SVG */
 window.addEventListener("load", async () => {
   Sidebar.show();
-  await SVG.ayncLoadShape('8-figure');
+  await SVG.asyncLoadShape('8-figure');
   SVG.showCircle();
   SVG.showPaths();
 

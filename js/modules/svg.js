@@ -9,7 +9,7 @@ let circleColorInvisible = 'rgba(0,0,0,0)';
 let pathColor = 'rgba(50,0,0,1)';
 let orderIsRegular = true;
 
-function ayncLoadShape(id) {
+function asyncLoadShape(id) {
     return new Promise((resolve, reject) => {
         const shapeConfig = getShapeConfig(id);
 
@@ -102,4 +102,4 @@ function addRandomTranslation(circleNode) {
     circleNode.setAttribute('transform', `translate(${randomX} ${randomY})`);
 }
 
-export { ayncLoadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder };
+export { asyncLoadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder };
