@@ -16,8 +16,11 @@ function asyncLoadShape(id) {
         const object = document.getElementById('svg-object');
         object.setAttribute('data', shapeConfig.svgUrl);
 
+        // TODO: stepping in multiple times here! Remove previous event listeners
+
         object.addEventListener('load', () => {
             const svg = object.contentDocument;
+            debugger;
             const shape = svg.querySelector('svg');
             allCircles = shape.querySelectorAll('circle');
             shapeBorders = shape.querySelectorAll('path, line');
@@ -33,6 +36,11 @@ function getShapeConfig(id) {
     if (id === '8-figure') {
         config = {
             svgUrl: 'img/shape.svg',
+        };
+    }
+    else if (id === 'line-vertical') {
+        config = {
+            svgUrl: 'img/shape-vertical.svg',
         };
     }
 
