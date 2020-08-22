@@ -43,3 +43,11 @@ document.querySelector('.js-settings__sequence-order').addEventListener('click',
   SVG.updateOrder(!event.currentTarget.checked);
 });
 
+/* LOAD SCENE */
+document.querySelectorAll('.js-settings__shape').forEach((input) => {
+  input.addEventListener('click', async (event) => {
+    await SVG.asyncLoadShape(event.currentTarget.value);
+    SVG.showCircle();
+    SVG.showPaths();
+  });
+});

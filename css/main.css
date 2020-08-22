@@ -116,13 +116,15 @@ button:focus{
   margin: 1em 0 0.5em 0;
 }
 
-.settings__checkbox {
+.settings__checkbox,
+.settings__radio-option {
   display: flex;
   align-items: center;
   padding: 0.25em 0;
 }
 
-.settings__checkbox-input {
+.settings__checkbox-input,
+.settings__radio-input{
   margin-right: 0.5em;
   cursor: pointer;
   width: 1.5em;

@@ -25,6 +25,34 @@
       </ol>
       <div class="settings">
         <h2>Settings</h2>
+
+        <div class="settings__label">Shape</div>
+        <div class="settings__radio js-settings__radio">
+          <div class="settings__radio-option">
+          <input
+                    class="settings__radio-input js-settings__shape"
+                    type="radio"
+                    id="shape-8"
+                    name="shape"
+                    value="8-figure"
+                    checked="checked"
+            >
+            <label class="settings__radio-label" for="shape-8">8 Figure</label>
+          </div>
+
+          <div class="settings__radio-option">
+            <input
+                    class="settings__radio-input js-settings__shape"
+                    type="radio"
+                    id="shape-line-vertical"
+                    name="shape"
+                    value="line-vertical"
+            >
+            <label class="settings__radio-label" for="shape-line-vertical">Vertical Line</label>
+          </div>
+
+        </div>
+
         <label class="settings__label" for="color-intensity-blue">Blue dot color intensity</label>
         <p class="settings__description">Reduce the color intensity until the blue dot is no longer visible through the red glass.</p>
         <input class="settings__color-intensity" type="range" id="color-intensity-blue" name="color-intensity-blue" min="0" max="255" value="255" step="1">
