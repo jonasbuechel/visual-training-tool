@@ -8,6 +8,7 @@ let circleColor = 'rgba(0,0,255,1)';
 let circleColorInvisible = 'rgba(0,0,0,0)';
 let pathColor = 'rgba(50,0,0,1)';
 let orderIsRegular = true;
+let autoModeEnabled = false;
 
 function asyncLoadShape(id) {
     return new Promise((resolve, reject) => {
@@ -110,4 +111,21 @@ function addRandomTranslation(circleNode) {
     circleNode.setAttribute('transform', `translate(${randomX} ${randomY})`);
 }
 
-export { asyncLoadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder };
+function toggleAutoMode(intervalTime = 1000) {
+    autoModeEnabled = !autoModeEnabled;
+
+    if (autoModeEnabled === false) {
+        return;
+    }
+
+    showNextCircle();
+
+    const interval = setInterval(function(){
+        showNextCircle();
+
+        if(autoModeEnabled === false) {
+            clearInterval(interval);
+        }
+    }, intervalTime);
+}
+export { asyncLoadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder, toggleAutoMode };

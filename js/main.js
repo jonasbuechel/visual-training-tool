@@ -37,6 +37,11 @@ document.querySelector('.js-button-toggle-fullscreen').addEventListener('click',
   Fullscreen.toggle();
 });
 
+document.querySelector('.js-button-toggle-intervalmode').addEventListener('click', (event) => {
+  event.currentTarget.blur();
+  SVG.toggleAutoMode(5000);
+});
+
 /* CIRCLE SEQUENCE ORDER */
 document.querySelector('.js-settings__sequence-order').addEventListener('click', (event) => {
   event.currentTarget.blur();
