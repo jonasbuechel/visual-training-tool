@@ -9,6 +9,7 @@ let circleColorInvisible = 'rgba(0,0,0,0)';
 let pathColor = 'rgba(50,0,0,1)';
 let orderIsRegular = true;
 let autoModeEnabled = false;
+let autoModeInterval = null;
 
 function asyncLoadShape(id) {
     return new Promise((resolve, reject) => {
@@ -115,17 +116,14 @@ function toggleAutoMode(intervalTime = 1000) {
     autoModeEnabled = !autoModeEnabled;
 
     if (autoModeEnabled === false) {
+        clearInterval(autoModeInterval);
         return;
     }
 
     showNextCircle();
 
-    const interval = setInterval(function(){
+    autoModeInterval = setInterval(function(){
         showNextCircle();
-
-        if(autoModeEnabled === false) {
-            clearInterval(interval);
-        }
     }, intervalTime);
 }
 export { asyncLoadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder, toggleAutoMode };
