@@ -54,6 +54,7 @@ body {
   opacity: var(--vt-sidebar-opacity);
   filter: var(--vt-sidebar-filter-blur);
   transition: filter var(--vt-animation-speed) ease-out, opacity var(--vt-animation-speed) ease-out;
+  overflow-y: auto;
 }
 
 .right--fullopacity,
