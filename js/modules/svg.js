@@ -22,7 +22,6 @@ function asyncLoadShape(id) {
 
         object.addEventListener('load', () => {
             const svg = object.contentDocument;
-            debugger;
             const shape = svg.querySelector('svg');
             allCircles = shape.querySelectorAll('circle');
             shapeBorders = shape.querySelectorAll('path, line');
