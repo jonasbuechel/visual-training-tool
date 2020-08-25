@@ -103,7 +103,7 @@ li {
   color: var(--vt-color-black);
 }
 
-button:active,
+.button:active,
 .button:focus{
   outline: none;
 }
