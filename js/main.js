@@ -34,11 +34,13 @@ document.querySelector('#color-intensity-red').addEventListener('input', (event)
 /* FULLSCREEN */
 document.querySelector('.js-button-toggle-fullscreen').addEventListener('click', (event) => {
   event.currentTarget.blur();
+  event.currentTarget.classList.toggle('button--state-active');
   Fullscreen.toggle();
 });
 
 document.querySelector('.js-button-toggle-intervalmode').addEventListener('click', (event) => {
   event.currentTarget.blur();
+  event.currentTarget.classList.toggle('button--state-active');
   SVG.toggleAutoMode(5000);
 });
 

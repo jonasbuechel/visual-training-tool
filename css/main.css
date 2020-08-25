@@ -89,7 +89,7 @@ li {
   padding-bottom: 0.5em;
 }
 
-button {
+.button {
   background: transparent;
   color: var(--vt-color-white);
   border: 1px solid var(--vt-color-white);
@@ -97,13 +97,14 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.button:hover,
+.button--state-active{
   background: var(--vt-color-white);
   color: var(--vt-color-black);
 }
 
 button:active,
-button:focus{
+.button:focus{
   outline: none;
 }
 
