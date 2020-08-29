@@ -6,10 +6,21 @@
     cursor: pointer;
 }
 
+.theme-bright .button {
+    color: var(--vt-color-black);
+    border-color: var(--vt-color-black);
+}
+
 .button:hover,
 .button--state-active{
     background: var(--vt-color-white);
     color: var(--vt-color-black);
+}
+
+.theme-bright .button:hover,
+.theme-bright .button--state-active{
+    background: var(--vt-color-black);
+    color: var(--vt-color-white);
 }
 
 .button:active,

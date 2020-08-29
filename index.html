@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body class="application js-application">
 
   <div class="wrapper">
     <main class="main">
@@ -44,6 +44,32 @@
             <label class="settings__radio-label" for="shape-line-vertical">Vertical Line</label>
           </div>
 
+        </div>
+
+        <div class="settings__label">Color Scheme</div>
+        <div class="settings__radio js-settings__radio">
+          <div class="settings__radio-option">
+            <input
+                    class="settings__radio-input js-settings__color-scheme"
+                    type="radio"
+                    id="color-scheme-dark"
+                    name="color-scheme"
+                    value="color-scheme-dark"
+                    checked="checked"
+            >
+            <label class="settings__radio-label" for="color-scheme-dark">Dark</label>
+          </div>
+
+          <div class="settings__radio-option">
+            <input
+                    class="settings__radio-input js-settings__color-scheme"
+                    type="radio"
+                    id="color-scheme-bright"
+                    name="color-scheme"
+                    value="color-scheme-bright"
+            >
+            <label class="settings__radio-label" for="color-scheme-bright">Bright</label>
+          </div>
         </div>
 
         <label class="settings__label" for="color-intensity-blue">Blue dot color intensity</label>

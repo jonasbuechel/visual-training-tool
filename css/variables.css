@@ -1,8 +1,9 @@
 :root {
-    --vt-color-white: rgba(255,255,255,0.75);
-    --vt-color-black: rgba(0,0,0,1);
-    --vt-color-grey: rgba(255,255,255,0.3);
-    --vt-color-grey-superlight: rgba(255,255,255,0.05);
+    --vt-color-white: rgb(230, 230, 230);
+    --vt-color-black: rgb(0, 0, 0);
+    --vt-color-grey-dark: rgb(80, 80, 80);
+    --vt-color-grey: rgb(169, 169, 169);
+    --vt-color-grey-transparent: rgba(255,255,255,0.05);
     --vt-color-transparent: rgba(0,0,0,0);
     --vt-sidebar-opacity: 0.25;
     --vt-sidebar-filter-blur: blur(4px);

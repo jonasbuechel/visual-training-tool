@@ -58,3 +58,24 @@ document.querySelectorAll('.js-settings__shape').forEach((input) => {
     SVG.showPaths();
   });
 });
+
+/* COLOR SCHEME */
+document.querySelectorAll('.js-settings__color-scheme').forEach((input) => {
+  input.addEventListener('click', async (event) => {
+    const bodyNode = document.querySelector('body');
+
+    if (event.currentTarget.value === 'color-scheme-bright') {
+      bodyNode.classList.add('theme-bright');
+      SVG.setColorScheme('bright');
+    }
+    else {
+      bodyNode.classList.remove('theme-bright');
+      SVG.setColorScheme('dark');
+    }
+
+    /* update settings */
+    document.getElementById('color-intensity-blue').value = SVG.getBlueValue();
+    document.getElementById('color-intensity-red').value = SVG.getRedValue();
+  });
+});
+

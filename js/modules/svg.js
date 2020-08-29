@@ -4,14 +4,21 @@ let allCircles = null;
 let shapeBorders = null;
 let addMispositioning = false;
 let currentCircle = 0;
-let circleColor = 'rgba(0,0,255,1)';
 let circleColorInvisible = 'rgba(0,0,0,0)';
-let pathColor = 'rgba(50,0,0,1)';
 let orderIsRegular = true;
 let autoModeEnabled = false;
 let autoModeInterval = null;
 
+let colorScheme = 'dark';
+let redValue = 50;
+let blueValue = 255;
+let circleColor =  '';
+let pathColor = '';
+
 function asyncLoadShape(id) {
+    updateCircleColor(blueValue);
+    updatePathColor(redValue);
+
     return new Promise((resolve, reject) => {
         const shapeConfig = getShapeConfig(id);
 
@@ -78,12 +85,44 @@ function showNextCircle() {
     showCircle(circleNumber);
 }
 
-function updateCircleColor(blueValue) {
-    circleColor = `rgba(0,0,${blueValue},1)`;
+function setColorScheme(id) {
+    colorScheme = id;
+    updateCircleColor();
+
+    if (id === 'dark') {
+        updatePathColor(50);
+    }
+    else if (id === 'bright') {
+        updatePathColor(255);
+    }
+
+
+    showCircle();
+    showPaths();
 }
 
-function updatePathColor(redValue) {
+function updateCircleColor(newBlueValue) {
+    blueValue = newBlueValue ? newBlueValue : blueValue;
+
+    if (colorScheme === 'dark') {
+        circleColor = `rgba(0,0,${blueValue},1)`;
+    }
+    else if (colorScheme === 'bright') {
+        circleColor = `rgba(0,${blueValue},${blueValue},1)`;
+    }
+}
+
+function updatePathColor(newRedValue) {
+    redValue = newRedValue ? newRedValue : redValue;
     pathColor = `rgba(${redValue},0,0,1)`;
+}
+
+function getBlueValue() {
+    return blueValue;
+}
+
+function getRedValue() {
+    return redValue;
 }
 
 function updateOrder(isRegular) {
@@ -125,4 +164,4 @@ function toggleAutoMode(intervalTime = 1000) {
         showNextCircle();
     }, intervalTime);
 }
-export { asyncLoadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder, toggleAutoMode };
+export { asyncLoadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder, toggleAutoMode, setColorScheme, getBlueValue, getRedValue };
