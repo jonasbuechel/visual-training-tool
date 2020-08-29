@@ -1,0 +1,10 @@
+:root {
+    --vt-color-white: rgba(255,255,255,0.75);
+    --vt-color-black: rgba(0,0,0,1);
+    --vt-color-grey: rgba(255,255,255,0.3);
+    --vt-color-grey-superlight: rgba(255,255,255,0.05);
+    --vt-color-transparent: rgba(0,0,0,0);
+    --vt-sidebar-opacity: 0.25;
+    --vt-sidebar-filter-blur: blur(4px);
+    --vt-animation-speed: 300ms;
+}

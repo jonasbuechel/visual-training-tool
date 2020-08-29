@@ -1,0 +1,38 @@
+.settings {
+    margin: 2em 0;
+}
+
+.settings__label {
+    display: block;
+    margin: 1em 0 0.5em 0;
+}
+
+.settings__checkbox,
+.settings__radio-option {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 0;
+}
+
+.settings__checkbox-input,
+.settings__radio-input{
+    margin-right: 0.5em;
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.settings__checkbox-label {
+    cursor: pointer;
+}
+
+.settings__description {
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
+.settings__color-intensity {
+    margin-bottom: 1em;
+    cursor: ew-resize;
+    width: 100%;
+}
