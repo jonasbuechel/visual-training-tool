@@ -74,8 +74,8 @@ document.querySelectorAll('.js-settings__color-scheme').forEach((input) => {
     }
 
     /* update settings */
-    document.getElementById('color-intensity-blue').value = SVG.getBlueValue();
-    document.getElementById('color-intensity-red').value = SVG.getRedValue();
+    document.getElementById('color-intensity-blue').value = SVG.getCircleColorIntensity();
+    document.getElementById('color-intensity-red').value = SVG.getPathColorIntensity();
   });
 });
 

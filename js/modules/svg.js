@@ -10,14 +10,14 @@ let autoModeEnabled = false;
 let autoModeInterval = null;
 
 let colorScheme = 'dark';
-let redValue = 50;
-let blueValue = 255;
+let pathColorIntensity = 50;
+let circleColorIntensity = 255;
 let circleColor =  '';
 let pathColor = '';
 
 function asyncLoadShape(id) {
-    updateCircleColor(blueValue);
-    updatePathColor(redValue);
+    updateCircleColor(circleColorIntensity);
+    updatePathColor(pathColorIntensity);
 
     return new Promise((resolve, reject) => {
         const shapeConfig = getShapeConfig(id);
@@ -88,50 +88,42 @@ function showNextCircle() {
 function setColorScheme(id) {
     colorScheme = id;
     updateCircleColor();
-
-    if (id === 'dark') {
-        updatePathColor(50);
-    }
-    else if (id === 'bright') {
-        updatePathColor(255);
-    }
-
-
+    updatePathColor();
     showCircle();
     showPaths();
 }
 
-function updateCircleColor(newBlueValue) {
-    blueValue = newBlueValue ? newBlueValue : blueValue;
+function updateCircleColor(newCircleColorIntensity) {
+    circleColorIntensity = newCircleColorIntensity || circleColorIntensity;
 
     if (colorScheme === 'dark') {
-        circleColor = `rgba(0,0,${blueValue},1)`;
+        circleColor = `rgba(0,0,${circleColorIntensity},1)`;
     }
     else if (colorScheme === 'bright') {
-        const pathRedValue = 255 - blueValue;
-        circleColor = `rgba(${pathRedValue},255,255,1)`;
+        const circleYellowValue = 255 - circleColorIntensity;
+        circleColor = `rgba(255,255,${circleYellowValue},1)`;
     }
 }
 
-function updatePathColor(newRedValue) {
-    redValue = newRedValue ? newRedValue : redValue;
+function updatePathColor(newPathColorIntensity) {
+    pathColorIntensity = newPathColorIntensity || pathColorIntensity;
 
     if (colorScheme === 'dark') {
-        pathColor = `rgba(${redValue},0,0,1)`;
+        pathColor = `rgba(${pathColorIntensity},0,0,1)`;
     }
     else if (colorScheme === 'bright') {
-        const pathYellow = 255 - redValue;
-        pathColor = `rgba(255,255,${pathYellow},1)`;
+        const pathRedValue = 255 - pathColorIntensity;
+        pathColor = `rgba(${pathRedValue},255,255,1)`;
     }
 
 }
 
-function getBlueValue() {
-    return blueValue;
+function getCircleColorIntensity() {
+    return circleColorIntensity;
 }
 
-function getRedValue() {
-    return redValue;
+function getPathColorIntensity() {
+    return pathColorIntensity;
 }
 
 function updateOrder(isRegular) {
@@ -173,4 +165,4 @@ function toggleAutoMode(intervalTime = 1000) {
         showNextCircle();
     }, intervalTime);
 }
-export { asyncLoadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder, toggleAutoMode, setColorScheme, getBlueValue, getRedValue };
+export { asyncLoadShape, showCircle, showNextCircle, showPaths, updateCircleColor, updatePathColor, updateOrder, toggleAutoMode, setColorScheme, getCircleColorIntensity, getPathColorIntensity };
