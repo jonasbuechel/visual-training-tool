@@ -21,12 +21,12 @@ document.addEventListener('keypress', (event) => {
 });
 
 /* SETTINGS */
-document.querySelector('#color-intensity-blue').addEventListener('input', (event) => {
+document.querySelector('#color-intensity-circle').addEventListener('input', (event) => {
   SVG.updateCircleColor(event.currentTarget.value);
   SVG.showCircle();
 });
 
-document.querySelector('#color-intensity-red').addEventListener('input', (event) => {
+document.querySelector('#color-intensity-lines').addEventListener('input', (event) => {
   SVG.updatePathColor(event.currentTarget.value);
   SVG.showPaths();
 });
@@ -74,8 +74,8 @@ document.querySelectorAll('.js-settings__color-scheme').forEach((input) => {
     }
 
     /* update settings */
-    document.getElementById('color-intensity-blue').value = SVG.getCircleColorIntensity();
-    document.getElementById('color-intensity-red').value = SVG.getPathColorIntensity();
+    document.getElementById('color-intensity-circle').value = SVG.getCircleColorIntensity();
+    document.getElementById('color-intensity-lines').value = SVG.getPathColorIntensity();
   });
 });
 
