@@ -108,13 +108,22 @@ function updateCircleColor(newBlueValue) {
         circleColor = `rgba(0,0,${blueValue},1)`;
     }
     else if (colorScheme === 'bright') {
-        circleColor = `rgba(0,${blueValue},${blueValue},1)`;
+        const pathRedValue = 255 - blueValue;
+        circleColor = `rgba(${pathRedValue},255,255,1)`;
     }
 }
 
 function updatePathColor(newRedValue) {
     redValue = newRedValue ? newRedValue : redValue;
-    pathColor = `rgba(${redValue},0,0,1)`;
+
+    if (colorScheme === 'dark') {
+        pathColor = `rgba(${redValue},0,0,1)`;
+    }
+    else if (colorScheme === 'bright') {
+        const pathYellow = 255 - redValue;
+        pathColor = `rgba(255,255,${pathYellow},1)`;
+    }
+
 }
 
 function getBlueValue() {
