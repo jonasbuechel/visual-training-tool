@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="981" height="48" viewBox="0 0 981 48">
+  <g fill="none" transform="rotate(-90 23.141 22.359)">
+    <circle cx="20.718" cy="10" r="10" />
+    <circle cx="20.718" cy="40" r="10" />
+    <circle cx="20.718" cy="70" r="10" />
+    <circle cx="20.718" cy="100" r="10" />
+    <circle cx="20.718" cy="130" r="10" />
+    <circle cx="20.718" cy="160" r="10" />
+    <circle cx="20.718" cy="190" r="10" />
+    <circle cx="20.718" cy="220" r="10" />
+    <circle cx="20.718" cy="250" r="10" />
+    <circle cx="20.718" cy="280" r="10" />
+    <circle cx="20.718" cy="310" r="10" />
+    <circle cx="20.718" cy="340" r="10" />
+    <circle cx="20.718" cy="370" r="10" />
+    <circle cx="20.718" cy="400" r="10" />
+    <circle cx="20.718" cy="430" r="10" />
+    <circle cx="20.718" cy="460" r="10" />
+    <circle cx="20.718" cy="490" r="10" />
+    <circle cx="20.718" cy="520" r="10" />
+    <circle cx="20.718" cy="550" r="10" />
+    <circle cx="20.718" cy="580" r="10" />
+    <circle cx="20.718" cy="610" r="10" />
+    <circle cx="20.718" cy="640" r="10" />
+    <circle cx="20.718" cy="670" r="10" />
+    <circle cx="20.718" cy="700" r="10" />
+    <circle cx="20.718" cy="730" r="10" />
+    <circle cx="20.718" cy="760" r="10" />
+    <circle cx="20.718" cy="790" r="10" />
+    <circle cx="20.718" cy="820" r="10" />
+    <circle cx="20.718" cy="850" r="10" />
+    <circle cx="20.718" cy="880" r="10" />
+    <circle cx="20.718" cy="910" r="10" />
+    <circle cx="20.718" cy="940" r="10" />
+    <circle cx="20.718" cy="970" r="10" />
+    <g stroke-width="5" transform="translate(.718)">
+      <line x1="40.598" x2="40.598" y2="980.002"/>
+      <line x1=".598" x2=".598" y2="980.002"/>
+    </g>
+  </g>
+</svg>

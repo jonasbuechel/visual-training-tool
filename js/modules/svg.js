@@ -41,15 +41,22 @@ function asyncLoadShape(id) {
 function getShapeConfig(id) {
     let config = {};
 
-    if (id === '8-figure') {
-        config = {
-            svgUrl: 'img/shape.svg',
-        };
-    }
-    else if (id === 'line-vertical') {
-        config = {
-            svgUrl: 'img/shape-vertical.svg',
-        };
+    switch (id) {
+        case '8-figure':
+            config = {
+                svgUrl: 'img/shape.svg',
+            };
+            break;
+        case 'line-vertical':
+            config = {
+                svgUrl: 'img/shape-vertical.svg',
+            };
+            break;
+        case 'line-horizontal':
+            config = {
+                svgUrl: 'img/shape-horizontal.svg',
+            };
+            break;
     }
 
     return config;
