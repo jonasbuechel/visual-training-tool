@@ -104,6 +104,38 @@ function getcurrentShapeConfig(id) {
                 }
             };
             break;
+        case 'meeting-lines-vertical':
+            config = {
+                svgUrl: 'img/shape-meeting-lines-vertical.svg',
+                items: {
+                    primary: {
+                        selector: '.upper',
+                        coloredProperty: 'fill',
+                        showAllPermanent: true
+                    },
+                    secondary: {
+                        selector: '.lower',
+                        coloredProperty: 'fill'
+                    }
+                }
+            };
+            break;
+        case 'meeting-triangles-vertical':
+            config = {
+                svgUrl: 'img/shape-meeting-triangles-vertical.svg',
+                items: {
+                    primary: {
+                        selector: '.upper',
+                        coloredProperty: 'fill',
+                        showAllPermanent: true
+                    },
+                    secondary: {
+                        selector: '.lower',
+                        coloredProperty: 'fill'
+                    }
+                }
+            };
+            break;
     }
 
     return config;

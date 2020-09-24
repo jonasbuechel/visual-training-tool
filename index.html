@@ -78,6 +78,28 @@
             <label class="settings__radio-label" for="shape-cross">Cross</label>
           </div>
 
+          <div class="settings__radio-option">
+            <input
+              class="settings__radio-input js-settings__shape"
+              type="radio"
+              id="shape-meeting-lines-vertical"
+              name="shape"
+              value="meeting-lines-vertical"
+            >
+            <label class="settings__radio-label" for="shape-meeting-lines-vertical">Meeting Lines Vertical</label>
+          </div>
+
+          <div class="settings__radio-option">
+            <input
+                class="settings__radio-input js-settings__shape"
+                type="radio"
+                id="shape-meeting-triangles-vertical"
+                name="shape"
+                value="meeting-triangles-vertical"
+            >
+            <label class="settings__radio-label" for="shape-meeting-triangles-vertical">Meeting Triangles Vertical</label>
+          </div>
+
         </div>
 
         <div class="settings__label">Color Scheme</div>
@@ -106,11 +128,11 @@
           </div>
         </div>
 
-        <label class="settings__label" for="color-intensity-circle">Circle color intensity</label>
+        <label class="settings__label" for="color-intensity-circle">Blue color intensity</label>
         <p class="settings__description">Reduce the color intensity until the circle is no longer visible through the red glass.</p>
         <input class="settings__color-intensity" type="range" id="color-intensity-circle" name="color-intensity-circle" min="0" max="255" value="255" step="1">
 
-        <label class="settings__label" for="color-intensity-lines">Lines color intensity</label>
+        <label class="settings__label" for="color-intensity-lines">Red color intensity</label>
         <p class="settings__description">Reduce the color intensity until the lines are no longer visible through the blue glass.</p>
         <input class="settings__color-intensity" type="range" id="color-intensity-lines" name="color-intensity-lines" min="0" max="255" value="50" step="1">
 
