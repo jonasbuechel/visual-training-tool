@@ -14,47 +14,94 @@ let pathColorIntensity = 50;
 let circleColorIntensity = 255;
 let circleColor =  '';
 let pathColor = '';
+let currentShapeConfig;
 
 function asyncLoadShape(id) {
     updateCircleColor(circleColorIntensity);
     updatePathColor(pathColorIntensity);
 
     return new Promise((resolve, reject) => {
-        const shapeConfig = getShapeConfig(id);
+        currentShapeConfig = getcurrentShapeConfig(id);
 
         const object = document.getElementById('svg-object');
-        object.setAttribute('data', shapeConfig.svgUrl);
+        object.setAttribute('data', currentShapeConfig.svgUrl);
 
         // TODO: stepping in multiple times here! Remove previous event listeners
 
         object.addEventListener('load', () => {
             const svg = object.contentDocument;
             const shape = svg.querySelector('svg');
-            allCircles = shape.querySelectorAll('circle');
-            shapeBorders = shape.querySelectorAll('path, line');
+            allCircles = shape.querySelectorAll(currentShapeConfig.items.primary.selector);
+            shapeBorders = shape.querySelectorAll(currentShapeConfig.items.secondary.selector);
 
             resolve();
         });
     });
 }
 
-function getShapeConfig(id) {
+function getcurrentShapeConfig(id) {
     let config = {};
 
     switch (id) {
         case '8-figure':
             config = {
                 svgUrl: 'img/shape.svg',
+                items: {
+                    primary: {
+                        selector: 'circle',
+                        coloredProperty: 'fill'
+                    },
+                    secondary: {
+                        selector: 'path, line',
+                        coloredProperty: 'stroke'
+                    }
+                }
             };
             break;
         case 'line-vertical':
             config = {
                 svgUrl: 'img/shape-vertical.svg',
+                items: {
+                    primary: {
+                        selector: 'circle',
+                        coloredProperty: 'fill'
+                    },
+                    secondary: {
+                        selector: 'path, line',
+                        coloredProperty: 'stroke'
+                    }
+                }
             };
             break;
         case 'line-horizontal':
             config = {
                 svgUrl: 'img/shape-horizontal.svg',
+                items: {
+                    primary: {
+                        selector: 'circle',
+                        coloredProperty: 'fill'
+                    },
+                    secondary: {
+                        selector: 'path, line',
+                        coloredProperty: 'stroke'
+                    }
+                }
+            };
+            break;
+        case 'cross':
+            config = {
+                svgUrl: 'img/shape-cross.svg',
+                items: {
+                    primary: {
+                        selector: '.horizontal',
+                        coloredProperty: 'fill',
+                        showAllPermanent: true
+                    },
+                    secondary: {
+                        selector: '.vertical',
+                        coloredProperty: 'fill'
+                    }
+                }
             };
             break;
     }
@@ -65,11 +112,18 @@ function getShapeConfig(id) {
 function showCircle(circleNumber) {
     circleNumber = circleNumber != undefined ? circleNumber : currentCircle;
 
+    if (currentShapeConfig.items.primary.showAllPermanent) {
+        allCircles.forEach((circle) => {
+            circle.setAttribute(currentShapeConfig.items.primary.coloredProperty, circleColor   );
+        });
+        return;
+    }
+
     const oldCircle = allCircles[currentCircle];
     const newCircle = allCircles[circleNumber];
 
-    oldCircle.setAttribute('fill', circleColorInvisible);
-    newCircle.setAttribute('fill', circleColor);
+    oldCircle.setAttribute(currentShapeConfig.items.primary.coloredProperty, circleColorInvisible);
+    newCircle.setAttribute(currentShapeConfig.items.primary.coloredProperty, circleColor);
 
     if (addMispositioning === true) {
         addRandomTranslation(newCircle);
@@ -139,7 +193,7 @@ function updateOrder(isRegular) {
 
 function showPaths() {
     shapeBorders.forEach((border) => {
-        border.setAttribute('stroke', pathColor);
+        border.setAttribute(currentShapeConfig.items.secondary.coloredProperty, pathColor);
     });
 }
 
