@@ -45,7 +45,7 @@ function getcurrentShapeConfig(id) {
     switch (id) {
         case '8-figure':
             config = {
-                svgUrl: 'img/shape.svg',
+                svgUrl: 'v1/img/shape.svg',
                 items: {
                     primary: {
                         selector: 'circle',
@@ -60,7 +60,7 @@ function getcurrentShapeConfig(id) {
             break;
         case 'line-vertical':
             config = {
-                svgUrl: 'img/shape-vertical.svg',
+                svgUrl: 'v1/img/shape-vertical.svg',
                 items: {
                     primary: {
                         selector: 'circle',
@@ -75,7 +75,7 @@ function getcurrentShapeConfig(id) {
             break;
         case 'line-horizontal':
             config = {
-                svgUrl: 'img/shape-horizontal.svg',
+                svgUrl: 'v1/img/shape-horizontal.svg',
                 items: {
                     primary: {
                         selector: 'circle',
@@ -90,7 +90,7 @@ function getcurrentShapeConfig(id) {
             break;
         case 'cross':
             config = {
-                svgUrl: 'img/shape-cross.svg',
+                svgUrl: 'v1/img/shape-cross.svg',
                 items: {
                     primary: {
                         selector: '.horizontal',
@@ -106,7 +106,7 @@ function getcurrentShapeConfig(id) {
             break;
         case 'meeting-lines-vertical':
             config = {
-                svgUrl: 'img/shape-meeting-lines-vertical.svg',
+                svgUrl: 'v1/img/shape-meeting-lines-vertical.svg',
                 items: {
                     primary: {
                         selector: '.upper',
@@ -122,7 +122,7 @@ function getcurrentShapeConfig(id) {
             break;
         case 'meeting-triangles-vertical':
             config = {
-                svgUrl: 'img/shape-meeting-triangles-vertical.svg',
+                svgUrl: 'v1/img/shape-meeting-triangles-vertical.svg',
                 items: {
                     primary: {
                         selector: '.upper',
