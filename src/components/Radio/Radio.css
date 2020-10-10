@@ -1,0 +1,16 @@
+.radio {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 0;
+}
+.radio__label {
+    display: block;
+    margin: 0;
+}
+
+.radio_input {
+    margin-right: 0.5em;
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+}

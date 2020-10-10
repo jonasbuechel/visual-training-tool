@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import Button from '../Button/Button';
+import Radio from '../Radio/Radio';
 import Fullscreen from '../../helpers/fullscreen';
 
 
 function App() {
-  function test() {
-    console.log('test');
+  function test(prop) {
+    console.log(prop);
   }
 
   return (
@@ -20,77 +21,59 @@ function App() {
         <h2>Settings</h2>
 
         <div className="settings__label">Shape</div>
-        <div className="settings__radio js-settings__radio">
+        <Radio
+            id="shape-8"
+            name="shape"
+            value="8-figure"
+            checked={true}
+            onChange={() => test('8-figure')}
+            label="8 Figure"
+        />
 
-          <div className="settings__radio-option">
-            <input
-                className="settings__radio-input js-settings__shape"
-                type="radio"
-                id="shape-8"
-                name="shape"
-                value="8-figure"
-                checked="checked"
-                onChange={test}
-            />
-            <label className="settings__radio-label" htmlFor="shape-8">8 Figure</label>
-          </div>
+        <Radio
+            id="shape-line-vertical"
+            name="shape"
+            value="shape-line-vertical"
+            checked={false}
+            onChange={() => test('shape-line-vertical')}
+            label="Vertical Line"
+        />
 
-          <div className="settings__radio-option">
-            <input
-                className="settings__radio-input js-settings__shape"
-                type="radio"
-                id="shape-line-vertical"
-                name="shape"
-                value="line-vertical"
-            />
-            <label className="settings__radio-label" htmlFor="shape-line-vertical">Vertical Line</label>
-          </div>
+        <Radio
+            id="shape-line-horizontal"
+            name="shape"
+            value="shape-line-horizontal"
+            checked={false}
+            onChange={() => test('shape-line-horizontal')}
+            label="Horizontal Line"
+        />
 
-          <div className="settings__radio-option">
-            <input
-                className="settings__radio-input js-settings__shape"
-                type="radio"
-                id="shape-line-horizontal"
-                name="shape"
-                value="line-horizontal"
-            />
-            <label className="settings__radio-label" htmlFor="shape-line-horizontal">Horizontal Line</label>
-          </div>
+        <Radio
+            id="shape-cross"
+            name="shape"
+            value="shape-cross"
+            checked={false}
+            onChange={() => test('shape-cross')}
+            label="Cross"
+        />
 
-          <div className="settings__radio-option">
-            <input
-                className="settings__radio-input js-settings__shape"
-                type="radio"
-                id="shape-cross"
-                name="shape"
-                value="cross"
-            />
-            <label className="settings__radio-label" htmlFor="shape-cross">Cross</label>
-          </div>
+        <Radio
+            id="shape-meeting-lines-vertical"
+            name="shape"
+            value="shape-meeting-lines-vertical"
+            checked={false}
+            onChange={() => test('shape-meeting-lines-vertical')}
+            label="Meeting Lines Vertical"
+        />
 
-          <div className="settings__radio-option">
-            <input
-                className="settings__radio-input js-settings__shape"
-                type="radio"
-                id="shape-meeting-lines-vertical"
-                name="shape"
-                value="meeting-lines-vertical"
-            />
-            <label className="settings__radio-label" htmlFor="shape-meeting-lines-vertical">Meeting Lines Vertical</label>
-          </div>
-
-          <div className="settings__radio-option">
-            <input
-                className="settings__radio-input js-settings__shape"
-                type="radio"
-                id="shape-meeting-triangles-vertical"
-                name="shape"
-                value="meeting-triangles-vertical"
-            />
-            <label className="settings__radio-label" htmlFor="shape-meeting-triangles-vertical">Meeting Triangles Vertical</label>
-          </div>
-
-        </div>
+         <Radio
+             id="shape-meeting-triangles-vertical"
+             name="shape"
+             value="shape-meeting-triangles-vertical"
+             checked={false}
+             onChange={() => test('shape-meeting-triangles-vertical')}
+             label="Meeting Triangles Vertical"
+         />
 
         <div className="settings__label">Color Scheme</div>
         <div className="settings__radio js-settings__radio">
