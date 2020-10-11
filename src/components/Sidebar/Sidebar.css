@@ -1,0 +1,23 @@
+.sidebar {
+  flex: 0 1 20%;
+  padding: 50px;
+  background: var(--vt-color-grey-transparent);
+  border-left: 2px solid var(--vt-color-grey);
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  opacity: var(--vt-sidebar-opacity);
+  filter: var(--vt-sidebar-filter-blur);
+  transition: filter var(--vt-animation-speed) ease-out,
+    opacity var(--vt-animation-speed) ease-out;
+  overflow-y: auto;
+}
+
+.theme-bright .sidebar {
+  border-left-color: var(--vt-color-grey-dark);
+}
+
+.sidebar--fullopacity {
+  opacity: 1;
+  filter: none;
+}

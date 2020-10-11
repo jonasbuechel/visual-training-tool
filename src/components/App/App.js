@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Button from "../Button/Button";
+import Sidebar from "../Sidebar/Sidebar";
 import Radio from "../Radio/Radio";
 import Fullscreen from "../../helpers/fullscreen";
 
@@ -18,7 +19,7 @@ class App extends React.Component {
               Graphic
             </object>
           </main>
-          <aside className="right right--fullopacity">
+          <Sidebar visible={false}>
             <div className="settings">
               <h2>Settings</h2>
 
@@ -184,7 +185,7 @@ class App extends React.Component {
               <h2>Interval mode</h2>
               <Button text="Toggle Interval Mode" />
             </div>
-          </aside>
+          </Sidebar>
         </div>
       </div>
     );
