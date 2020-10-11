@@ -79,41 +79,24 @@ class App extends React.Component {
               />
 
               <div className="settings__label">Color Scheme</div>
-              <div className="settings__radio js-settings__radio">
-                <div className="settings__radio-option">
-                  <input
-                    className="settings__radio-input js-settings__color-scheme"
-                    type="radio"
-                    id="color-scheme-dark"
-                    name="color-scheme"
-                    value="color-scheme-dark"
-                    checked="checked"
-                    onChange={this.test}
-                  />
-                  <label
-                    className="settings__radio-label"
-                    htmlFor="color-scheme-dark"
-                  >
-                    Dark
-                  </label>
-                </div>
 
-                <div className="settings__radio-option">
-                  <input
-                    className="settings__radio-input js-settings__color-scheme"
-                    type="radio"
-                    id="color-scheme-bright"
-                    name="color-scheme"
-                    value="color-scheme-bright"
-                  />
-                  <label
-                    className="settings__radio-label"
-                    htmlFor="color-scheme-bright"
-                  >
-                    Bright
-                  </label>
-                </div>
-              </div>
+              <Radio
+                id="color-scheme-dark"
+                name="color-scheme"
+                value="color-scheme-dark"
+                checked={true}
+                onChange={() => this.test("color-scheme-dark")}
+                label="Dark"
+              />
+
+              <Radio
+                id="color-scheme-bright"
+                name="color-scheme"
+                value="color-scheme-bright"
+                checked={false}
+                onChange={() => this.test("color-scheme-bright")}
+                label="Bright"
+              />
 
               <label
                 className="settings__label"
@@ -183,7 +166,7 @@ class App extends React.Component {
 
             <div className="settings">
               <h2>Interval mode</h2>
-              <Button text="Toggle Interval Mode" />
+              <Button text="Toggle Interval Mode" onClick={this.hideSidebar} />
             </div>
           </Sidebar>
         </div>
