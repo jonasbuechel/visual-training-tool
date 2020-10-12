@@ -4,10 +4,15 @@ import Button from "../Button/Button";
 import Sidebar from "../Sidebar/Sidebar";
 import Radio from "../Radio/Radio";
 import Fullscreen from "../../helpers/fullscreen";
+import Cursor from "../../helpers/cursor";
 
 class App extends React.Component {
   test(prop) {
     console.log(prop);
+  }
+
+  componentDidMount() {
+    Cursor.autoHide(500);
   }
 
   render() {
