@@ -171,7 +171,7 @@ class App extends React.Component {
 
             <div className="settings">
               <h2>Interval mode</h2>
-              <Button text="Toggle Interval Mode" onClick={this.hideSidebar} />
+              <Button text="Toggle Interval Mode" onClick={this.test} />
             </div>
           </Sidebar>
         </div>
