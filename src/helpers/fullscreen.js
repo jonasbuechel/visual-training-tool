@@ -1,11 +1,11 @@
-function toggle() {
+class Fullscreen {
+  static toggle() {
     if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-    } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        }
+      document.documentElement.requestFullscreen();
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
     }
+  }
 }
 
-export default { toggle };
+export default Fullscreen;
