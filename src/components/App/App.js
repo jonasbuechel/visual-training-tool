@@ -3,6 +3,7 @@ import "./App.css";
 import Button from "../Button/Button";
 import Sidebar from "../Sidebar/Sidebar";
 import Radio from "../Radio/Radio";
+import Rangeslider from "../Rangeslider/Rangeslider";
 import Fullscreen from "../../helpers/fullscreen";
 import Cursor from "../../helpers/cursor";
 
@@ -103,48 +104,28 @@ class App extends React.Component {
                 label="Bright"
               />
 
-              <label
-                className="settings__label"
-                htmlFor="color-intensity-circle"
-              >
-                Blue color intensity
-              </label>
-              <p className="settings__description">
-                Reduce the color intensity until the blue color is no longer
-                visible through the red glass.
-              </p>
-              <input
-                onChange={this.test}
-                className="settings__color-intensity"
-                type="range"
+              <Rangeslider
+                onChange={(value) => this.test(value)}
                 id="color-intensity-circle"
-                name="color-intensity-circle"
                 min="0"
                 max="255"
-                value="255"
+                defaultValue="255"
                 step="1"
+                label="Blue color intensity"
+                description="Reduce the color intensity until the blue color is no longer
+                visible through the red glass."
               />
 
-              <label
-                className="settings__label"
-                htmlFor="color-intensity-lines"
-              >
-                Red color intensity
-              </label>
-              <p className="settings__description">
-                Reduce the color intensity until the red color are no longer
-                visible through the blue glass.
-              </p>
-              <input
-                onChange={this.test}
-                className="settings__color-intensity"
-                type="range"
+              <Rangeslider
+                onChange={(value) => this.test(value)}
                 id="color-intensity-lines"
-                name="color-intensity-lines"
                 min="0"
                 max="255"
-                value="50"
+                defaultValue="255"
                 step="1"
+                label="Red color intensity"
+                description="Reduce the color intensity until the red color are no longer
+                visible through the blue glass."
               />
 
               <div className="settings__label">Circle sequence order</div>
