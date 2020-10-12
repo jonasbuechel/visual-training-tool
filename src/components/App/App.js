@@ -35,7 +35,7 @@ class App extends React.Component {
                 name="shape"
                 value="8-figure"
                 checked={true}
-                onChange={() => this.test("8-figure")}
+                onChange={(value) => this.test(value)}
                 label="8 Figure"
               />
 
@@ -44,7 +44,7 @@ class App extends React.Component {
                 name="shape"
                 value="shape-line-vertical"
                 checked={false}
-                onChange={() => this.test("shape-line-vertical")}
+                onChange={(value) => this.test(value)}
                 label="Vertical Line"
               />
 
@@ -53,7 +53,7 @@ class App extends React.Component {
                 name="shape"
                 value="shape-line-horizontal"
                 checked={false}
-                onChange={() => this.test("shape-line-horizontal")}
+                onChange={(value) => this.test(value)}
                 label="Horizontal Line"
               />
 
@@ -62,7 +62,7 @@ class App extends React.Component {
                 name="shape"
                 value="shape-cross"
                 checked={false}
-                onChange={() => this.test("shape-cross")}
+                onChange={(value) => this.test(value)}
                 label="Cross"
               />
 
@@ -71,7 +71,7 @@ class App extends React.Component {
                 name="shape"
                 value="shape-meeting-lines-vertical"
                 checked={false}
-                onChange={() => this.test("shape-meeting-lines-vertical")}
+                onChange={(value) => this.test(value)}
                 label="Meeting Lines Vertical"
               />
 
@@ -80,7 +80,7 @@ class App extends React.Component {
                 name="shape"
                 value="shape-meeting-triangles-vertical"
                 checked={false}
-                onChange={() => this.test("shape-meeting-triangles-vertical")}
+                onChange={(value) => this.test(value)}
                 label="Meeting Triangles Vertical"
               />
 
@@ -91,7 +91,7 @@ class App extends React.Component {
                 name="color-scheme"
                 value="color-scheme-dark"
                 checked={true}
-                onChange={() => this.test("color-scheme-dark")}
+                onChange={(value) => this.test(value)}
                 label="Dark"
               />
 
@@ -100,7 +100,7 @@ class App extends React.Component {
                 name="color-scheme"
                 value="color-scheme-bright"
                 checked={false}
-                onChange={() => this.test("color-scheme-bright")}
+                onChange={(value) => this.test(value)}
                 label="Bright"
               />
 
