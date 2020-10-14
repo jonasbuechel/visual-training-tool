@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="650" viewBox="0 0 650 650">
+  <g fill="#D8D8D8" fill-rule="evenodd">
+    <rect class="vertical" width="50" height="300" x="300"/>
+    <rect class="vertical" width="50" height="300" x="300" y="350"/>
+    <rect class="horizontal" width="50" height="300" x="475" y="175" transform="rotate(90 500 325)"/>
+    <rect class="horizontal" width="50" height="300" x="125" y="175" transform="rotate(90 150 325)"/>
+  </g>
+</svg>

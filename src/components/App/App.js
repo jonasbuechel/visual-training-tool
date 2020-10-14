@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Graphic from "../Graphic/Graphic";
 import Button from "../Button/Button";
 import Sidebar from "../Sidebar/Sidebar";
 import Radio from "../Radio/Radio";
@@ -21,9 +22,7 @@ class App extends React.Component {
       <div className="App">
         <div className="wrapper">
           <main className="main">
-            <object id="svg-object" type="image/svg+xml">
-              Graphic
-            </object>
+            <Graphic svgUrl="../shape.svg" />
           </main>
           <Sidebar visible={false}>
             <div className="settings">

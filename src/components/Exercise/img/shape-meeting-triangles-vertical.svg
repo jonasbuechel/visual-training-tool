@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="602" viewBox="0 0 152 602">
+  <g fill="#D8D8D8" fill-rule="evenodd">
+    <polygon class="lower" points="75 300 150 600 0 600"/>
+    <polygon class="upper" points="75 0 150 300 0 300" transform="rotate(180 75 150)"/>
+  </g>
+</svg>
