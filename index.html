@@ -1,161 +1,219 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-177625070-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
+      gtag("config", "UA-177625070-1");
+    </script>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177625070-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <meta charset="utf-8" />
+    <title>Visual Training Tool</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="v1/css/main.css" />
+  </head>
 
-    gtag('config', 'UA-177625070-1');
-  </script>
+  <body class="application js-application">
+    <div class="wrapper">
+      <main class="main">
+        <object id="svg-object" type="image/svg+xml"></object>
+      </main>
+      <aside class="right right--fullopacity">
+        <div class="settings">
+          <h2>Settings</h2>
 
-  <meta charset="utf-8">
-  <title>Visual Training Tool</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="v1/css/main.css">
-</head>
-
-<body class="application js-application">
-
-  <div class="wrapper">
-    <main class="main">
-      <object id="svg-object" type="image/svg+xml"></object>
-    </main>
-    <aside class="right right--fullopacity">
-      <div class="settings">
-        <h2>Settings</h2>
-
-        <div class="settings__label">Shape</div>
-        <div class="settings__radio js-settings__radio">
-
-          <div class="settings__radio-option">
-            <input
-              class="settings__radio-input js-settings__shape"
-              type="radio"
-              id="shape-8"
-              name="shape"
-              value="8-figure"
-              checked="checked"
+          <div class="settings__label">Shape</div>
+          <div class="settings__radio js-settings__radio">
+            <div class="settings__radio-option">
+              <input
+                class="settings__radio-input js-settings__shape"
+                type="radio"
+                id="shape-8"
+                name="shape"
+                value="8-figure"
+                checked="checked"
+              />
+              <label class="settings__radio-label" for="shape-8"
+                >8 Figure</label
               >
-            <label class="settings__radio-label" for="shape-8">8 Figure</label>
-          </div>
+            </div>
 
-          <div class="settings__radio-option">
-            <input
-              class="settings__radio-input js-settings__shape"
-              type="radio"
-              id="shape-line-vertical"
-              name="shape"
-              value="line-vertical"
-            >
-            <label class="settings__radio-label" for="shape-line-vertical">Vertical Line</label>
-          </div>
+            <div class="settings__radio-option">
+              <input
+                class="settings__radio-input js-settings__shape"
+                type="radio"
+                id="shape-line-vertical"
+                name="shape"
+                value="line-vertical"
+              />
+              <label class="settings__radio-label" for="shape-line-vertical"
+                >Vertical Line</label
+              >
+            </div>
 
-          <div class="settings__radio-option">
-            <input
-              class="settings__radio-input js-settings__shape"
-              type="radio"
-              id="shape-line-horizontal"
-              name="shape"
-              value="line-horizontal"
-            >
-            <label class="settings__radio-label" for="shape-line-horizontal">Horizontal Line</label>
-          </div>
+            <div class="settings__radio-option">
+              <input
+                class="settings__radio-input js-settings__shape"
+                type="radio"
+                id="shape-line-horizontal"
+                name="shape"
+                value="line-horizontal"
+              />
+              <label class="settings__radio-label" for="shape-line-horizontal"
+                >Horizontal Line</label
+              >
+            </div>
 
-          <div class="settings__radio-option">
-            <input
-              class="settings__radio-input js-settings__shape"
-              type="radio"
-              id="shape-cross"
-              name="shape"
-              value="cross"
-            >
-            <label class="settings__radio-label" for="shape-cross">Cross</label>
-          </div>
+            <div class="settings__radio-option">
+              <input
+                class="settings__radio-input js-settings__shape"
+                type="radio"
+                id="shape-cross"
+                name="shape"
+                value="cross"
+              />
+              <label class="settings__radio-label" for="shape-cross"
+                >Cross</label
+              >
+            </div>
 
-          <div class="settings__radio-option">
-            <input
-              class="settings__radio-input js-settings__shape"
-              type="radio"
-              id="shape-meeting-lines-vertical"
-              name="shape"
-              value="meeting-lines-vertical"
-            >
-            <label class="settings__radio-label" for="shape-meeting-lines-vertical">Meeting Lines Vertical</label>
-          </div>
+            <div class="settings__radio-option">
+              <input
+                class="settings__radio-input js-settings__shape"
+                type="radio"
+                id="shape-meeting-lines-vertical"
+                name="shape"
+                value="meeting-lines-vertical"
+              />
+              <label
+                class="settings__radio-label"
+                for="shape-meeting-lines-vertical"
+                >Meeting Lines Vertical</label
+              >
+            </div>
 
-          <div class="settings__radio-option">
-            <input
+            <div class="settings__radio-option">
+              <input
                 class="settings__radio-input js-settings__shape"
                 type="radio"
                 id="shape-meeting-triangles-vertical"
                 name="shape"
                 value="meeting-triangles-vertical"
-            >
-            <label class="settings__radio-label" for="shape-meeting-triangles-vertical">Meeting Triangles Vertical</label>
+              />
+              <label
+                class="settings__radio-label"
+                for="shape-meeting-triangles-vertical"
+                >Meeting Triangles Vertical</label
+              >
+            </div>
           </div>
 
-        </div>
+          <div class="settings__label">Color Scheme</div>
+          <div class="settings__radio js-settings__radio">
+            <div class="settings__radio-option">
+              <input
+                class="settings__radio-input js-settings__color-scheme"
+                type="radio"
+                id="color-scheme-dark"
+                name="color-scheme"
+                value="color-scheme-dark"
+                checked="checked"
+              />
+              <label class="settings__radio-label" for="color-scheme-dark"
+                >Dark</label
+              >
+            </div>
 
-        <div class="settings__label">Color Scheme</div>
-        <div class="settings__radio js-settings__radio">
-          <div class="settings__radio-option">
+            <div class="settings__radio-option">
+              <input
+                class="settings__radio-input js-settings__color-scheme"
+                type="radio"
+                id="color-scheme-bright"
+                name="color-scheme"
+                value="color-scheme-bright"
+              />
+              <label class="settings__radio-label" for="color-scheme-bright"
+                >Bright</label
+              >
+            </div>
+          </div>
+
+          <label class="settings__label" for="color-intensity-circle"
+            >Blue color intensity</label
+          >
+          <p class="settings__description">
+            Reduce the color intensity until the blue color is no longer visible
+            through the red glass.
+          </p>
+          <input
+            class="settings__color-intensity"
+            type="range"
+            id="color-intensity-circle"
+            name="color-intensity-circle"
+            min="0"
+            max="255"
+            value="255"
+            step="1"
+          />
+
+          <label class="settings__label" for="color-intensity-lines"
+            >Red color intensity</label
+          >
+          <p class="settings__description">
+            Reduce the color intensity until the red color are no longer visible
+            through the blue glass.
+          </p>
+          <input
+            class="settings__color-intensity"
+            type="range"
+            id="color-intensity-lines"
+            name="color-intensity-lines"
+            min="0"
+            max="255"
+            value="50"
+            step="1"
+          />
+
+          <div class="settings__label">Circle sequence order</div>
+          <div class="settings__checkbox">
             <input
-              class="settings__radio-input js-settings__color-scheme"
-              type="radio"
-              id="color-scheme-dark"
-              name="color-scheme"
-              value="color-scheme-dark"
-              checked="checked"
+              class="settings__checkbox-input js-settings__sequence-order"
+              type="checkbox"
+              id="sequence-order"
+              name="sequence-order"
+            />
+            <label class="settings__checkbox-label" for="sequence-order"
+              >Reverse circle sequence order</label
             >
-            <label class="settings__radio-label" for="color-scheme-dark">Dark</label>
-          </div>
-
-          <div class="settings__radio-option">
-            <input
-              class="settings__radio-input js-settings__color-scheme"
-              type="radio"
-              id="color-scheme-bright"
-              name="color-scheme"
-              value="color-scheme-bright"
-            >
-            <label class="settings__radio-label" for="color-scheme-bright">Bright</label>
           </div>
         </div>
-
-        <label class="settings__label" for="color-intensity-circle">Blue color intensity</label>
-        <p class="settings__description">Reduce the color intensity until the blue color is no longer visible through the red glass.</p>
-        <input class="settings__color-intensity" type="range" id="color-intensity-circle" name="color-intensity-circle" min="0" max="255" value="255" step="1">
-
-        <label class="settings__label" for="color-intensity-lines">Red color intensity</label>
-        <p class="settings__description">Reduce the color intensity until the red color are no longer visible through the blue glass.</p>
-        <input class="settings__color-intensity" type="range" id="color-intensity-lines" name="color-intensity-lines" min="0" max="255" value="50" step="1">
-
-        <div class="settings__label">Circle sequence order</div>
-        <div class="settings__checkbox">
-          <input class="settings__checkbox-input js-settings__sequence-order" type="checkbox" id="sequence-order" name="sequence-order">
-          <label class="settings__checkbox-label" for="sequence-order">Reverse circle sequence order</label>
+        <div class="settings">
+          <h2>Fullscreen</h2>
+          <p>Enter / leave fullscreen mode.</p>
+          <button class="button js-button-toggle-fullscreen">
+            Toggle Fullscreen
+          </button>
         </div>
-      </div>
-      <div class="settings">
-        <h2>Fullscreen</h2>
-        <p>Enter / leave fullscreen mode.</p>
-        <button class="button js-button-toggle-fullscreen">Toggle Fullscreen</button>
-      </div>
 
-      <div class="settings">
-        <h2>Interval mode</h2>
-        <button class="button js-button-toggle-intervalmode">Toggle Interval Mode</button>
-      </div>
-    </aside>
-  </div>
+        <div class="settings">
+          <h2>Interval mode</h2>
+          <button class="button js-button-toggle-intervalmode">
+            Toggle Interval Mode
+          </button>
+        </div>
+      </aside>
+    </div>
 
-  <script type="module" src="v1/js/main.js"></script>
-</body>
-
+    <script type="module" src="v1/js/main.js"></script>
+  </body>
 </html>
