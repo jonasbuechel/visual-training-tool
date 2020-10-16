@@ -1,5 +1,7 @@
 import { getRandomNumber } from "./helpers.js";
 
+const darkBaseColor = 85;
+const brightBaseColor = 170;
 let allCircles = null;
 let shapeBorders = null;
 let addMispositioning = false;
