@@ -158,6 +158,22 @@ function getcurrentShapeConfig(id) {
         },
       };
       break;
+    case "cross-in-angles":
+      config = {
+        svgUrl: "v1/img/shape-cross-in-angles.svg",
+        items: {
+          primary: {
+            selector: ".inner",
+            coloredProperty: "fill",
+            showAllPermanent: true,
+          },
+          secondary: {
+            selector: ".outer",
+            coloredProperty: "fill",
+          },
+        },
+      };
+      break;
   }
 
   return config;
@@ -220,26 +236,23 @@ function setColorScheme(id) {
 function updateCircleColor(newCircleColorIntensity) {
   circleColorIntensity = newCircleColorIntensity || circleColorIntensity;
 
-    if (colorScheme === 'dark') {
-        circleColor = `rgba(${darkBaseColor},${darkBaseColor},${circleColorIntensity},1)`;
-    }
-    else if (colorScheme === 'bright') {
-        const circleYellowValue = brightBaseColor - circleColorIntensity;
-        circleColor = `rgba(${brightBaseColor},${brightBaseColor},${circleYellowValue},1)`;
-    }
+  if (colorScheme === "dark") {
+    circleColor = `rgba(${darkBaseColor},${darkBaseColor},${circleColorIntensity},1)`;
+  } else if (colorScheme === "bright") {
+    const circleYellowValue = brightBaseColor - circleColorIntensity;
+    circleColor = `rgba(${brightBaseColor},${brightBaseColor},${circleYellowValue},1)`;
+  }
 }
 
 function updatePathColor(newPathColorIntensity) {
   pathColorIntensity = newPathColorIntensity || pathColorIntensity;
 
-    if (colorScheme === 'dark') {
-        pathColor = `rgba(${pathColorIntensity},${darkBaseColor},${darkBaseColor},1)`;
-    }
-    else if (colorScheme === 'bright') {
-        const pathRedValue = brightBaseColor - pathColorIntensity;
-        pathColor = `rgba(${pathRedValue},${brightBaseColor},${brightBaseColor},1)`;
-    }
-
+  if (colorScheme === "dark") {
+    pathColor = `rgba(${pathColorIntensity},${darkBaseColor},${darkBaseColor},1)`;
+  } else if (colorScheme === "bright") {
+    const pathRedValue = brightBaseColor - pathColorIntensity;
+    pathColor = `rgba(${pathRedValue},${brightBaseColor},${brightBaseColor},1)`;
+  }
 }
 
 function getCircleColorIntensity() {

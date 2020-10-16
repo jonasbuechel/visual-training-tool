@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="650" viewBox="0 0 650 650">
+  <g fill="none" fill-rule="evenodd">
+    <rect class="inner" width="50" height="650" x="300" fill="#696969"/>
+    <rect class="inner" width="650" height="50" y="300" fill="#696969"/>
+    <rect class="outer" width="200" height="50" x="400" y="200" fill="#D8D8D8"/>
+    <rect class="outer" width="200" height="50" x="400" y="400" fill="#D8D8D8"/>
+    <rect class="outer" width="200" height="50" x="50" y="400" fill="#D8D8D8"/>
+    <rect class="outer" width="200" height="50" x="50" y="200" fill="#D8D8D8"/>
+    <rect class="outer" width="50" height="200" x="400" y="50" fill="#D8D8D8"/>
+    <rect class="outer" width="50" height="200" x="200" y="50" fill="#D8D8D8"/>
+    <rect class="outer" width="50" height="200" x="200" y="402" fill="#D8D8D8"/>
+    <rect class="outer" width="50" height="200" x="400" y="400" fill="#D8D8D8"/>
+  </g>
+</svg>
