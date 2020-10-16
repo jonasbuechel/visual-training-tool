@@ -140,6 +140,22 @@ function getcurrentShapeConfig(id) {
         },
       };
       break;
+    case "centered-line-vertical":
+      config = {
+        svgUrl: "v1/img/shape-centered-line-vertical.svg",
+        items: {
+          primary: {
+            selector: ".outer",
+            coloredProperty: "fill",
+            showAllPermanent: true,
+          },
+          secondary: {
+            selector: ".inner",
+            coloredProperty: "fill",
+          },
+        },
+      };
+      break;
   }
 
   return config;
@@ -202,23 +218,26 @@ function setColorScheme(id) {
 function updateCircleColor(newCircleColorIntensity) {
   circleColorIntensity = newCircleColorIntensity || circleColorIntensity;
 
-  if (colorScheme === "dark") {
-    circleColor = `rgba(0,0,${circleColorIntensity},1)`;
-  } else if (colorScheme === "bright") {
-    const circleYellowValue = 255 - circleColorIntensity;
-    circleColor = `rgba(255,255,${circleYellowValue},1)`;
-  }
+    if (colorScheme === 'dark') {
+        circleColor = `rgba(${darkBaseColor},${darkBaseColor},${circleColorIntensity},1)`;
+    }
+    else if (colorScheme === 'bright') {
+        const circleYellowValue = brightBaseColor - circleColorIntensity;
+        circleColor = `rgba(${brightBaseColor},${brightBaseColor},${circleYellowValue},1)`;
+    }
 }
 
 function updatePathColor(newPathColorIntensity) {
   pathColorIntensity = newPathColorIntensity || pathColorIntensity;
 
-  if (colorScheme === "dark") {
-    pathColor = `rgba(${pathColorIntensity},0,0,1)`;
-  } else if (colorScheme === "bright") {
-    const pathRedValue = 255 - pathColorIntensity;
-    pathColor = `rgba(${pathRedValue},255,255,1)`;
-  }
+    if (colorScheme === 'dark') {
+        pathColor = `rgba(${pathColorIntensity},${darkBaseColor},${darkBaseColor},1)`;
+    }
+    else if (colorScheme === 'bright') {
+        const pathRedValue = brightBaseColor - pathColorIntensity;
+        pathColor = `rgba(${pathRedValue},${brightBaseColor},${brightBaseColor},1)`;
+    }
+
 }
 
 function getCircleColorIntensity() {
