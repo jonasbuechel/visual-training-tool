@@ -22,6 +22,10 @@ body.theme-bright {
   flex: 1 1 auto;
 }
 
+.main--bright-max {
+  background: var(--vt-color-white-max);
+}
+
 #svg-object {
   width: 100%;
   height: 100%;

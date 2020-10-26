@@ -63,9 +63,14 @@ document
 /* LOAD SCENE */
 document.querySelectorAll(".js-settings__shape").forEach((input) => {
   input.addEventListener("click", async (event) => {
-    await SVG.asyncLoadShape(event.currentTarget.value);
+    const value = event.currentTarget.value;
+    await SVG.asyncLoadShape(value);
     SVG.showCircle();
     SVG.showPaths();
+
+    document
+      .querySelector(".main")
+      .classList.toggle("main--bright-max", value === "plateau-spiral");
   });
 });
 

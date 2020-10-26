@@ -33,12 +33,15 @@ function asyncLoadShape(id) {
     object.addEventListener("load", () => {
       const svg = object.contentDocument;
       const shape = svg.querySelector("svg");
-      allCircles = shape.querySelectorAll(
-        currentShapeConfig.items.primary.selector
-      );
-      shapeBorders = shape.querySelectorAll(
-        currentShapeConfig.items.secondary.selector
-      );
+
+      if (currentShapeConfig && currentShapeConfig.items) {
+        allCircles = shape.querySelectorAll(
+          currentShapeConfig.items.primary.selector
+        );
+        shapeBorders = shape.querySelectorAll(
+          currentShapeConfig.items.secondary.selector
+        );
+      }
 
       resolve();
     });
@@ -174,6 +177,11 @@ function getcurrentShapeConfig(id) {
         },
       };
       break;
+    case "plateau-spiral":
+      config = {
+        svgUrl: "v1/img/plateau-spiral.svg",
+      };
+      break;
   }
 
   return config;
@@ -182,7 +190,7 @@ function getcurrentShapeConfig(id) {
 function showCircle(circleNumber) {
   circleNumber = circleNumber != undefined ? circleNumber : currentCircle;
 
-  if (currentShapeConfig.items.primary.showAllPermanent) {
+  if (currentShapeConfig.items?.primary.showAllPermanent) {
     allCircles.forEach((circle) => {
       circle.setAttribute(
         currentShapeConfig.items.primary.coloredProperty,
@@ -196,11 +204,11 @@ function showCircle(circleNumber) {
   const newCircle = allCircles[circleNumber];
 
   oldCircle.setAttribute(
-    currentShapeConfig.items.primary.coloredProperty,
+    currentShapeConfig.items?.primary.coloredProperty,
     circleColorInvisible
   );
   newCircle.setAttribute(
-    currentShapeConfig.items.primary.coloredProperty,
+    currentShapeConfig.items?.primary.coloredProperty,
     circleColor
   );
 
@@ -270,7 +278,7 @@ function updateOrder(isRegular) {
 function showPaths() {
   shapeBorders.forEach((border) => {
     border.setAttribute(
-      currentShapeConfig.items.secondary.coloredProperty,
+      currentShapeConfig.items?.secondary.coloredProperty,
       pathColor
     );
   });

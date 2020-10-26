@@ -1,4 +1,5 @@
 :root {
+    --vt-color-white-max: rgb(255, 255, 255);
     --vt-color-white: rgb(170, 170, 170);
     --vt-color-black: rgb(85, 85, 85);
     --vt-color-grey-dark: rgb(80, 80, 80);
