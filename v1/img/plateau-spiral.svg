@@ -5,6 +5,7 @@
       width: auto;
       height: 100%;
       animation: spin 1s linear infinite;
+      animation-iteration-count: 60;
     }
 
     @keyframes spin {
