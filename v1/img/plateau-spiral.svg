@@ -4,8 +4,8 @@
       position: absolute;
       width: auto;
       height: 100%;
-      animation: spin 1s linear infinite;
-      animation-iteration-count: 60;
+      animation: spin 2s linear infinite;
+      animation-iteration-count: 30;
     }
 
     @keyframes spin {
