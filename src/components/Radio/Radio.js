@@ -3,7 +3,7 @@ import "./Radio.css";
 
 class Radio extends React.Component {
   handleOnChange() {
-    this.props.onChange(this.props.id);
+    this.props.onChange(this.props.value);
   }
 
   render() {

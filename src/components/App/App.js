@@ -9,6 +9,15 @@ import Fullscreen from "../../helpers/fullscreen";
 import Cursor from "../../helpers/cursor";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      svgName: "shape-cross",
+      colorPrimaryIntensity: 255,
+      colorSecondaryIntensity: 50,
+    };
+  }
+
   test(prop) {
     console.log(prop);
   }
@@ -17,12 +26,16 @@ class App extends React.Component {
     Cursor.autoHide(500);
   }
 
-  render() {
+  render(svgName) {
     return (
       <div className="App">
         <div className="wrapper">
           <main className="main">
-            <Graphic svgUrl="../shape.svg" />
+            <Graphic
+              svgName={this.state.svgName}
+              colorPrimaryIntensity={this.state.colorPrimaryIntensity}
+              colorSecondaryIntensity={this.state.colorSecondaryIntensity}
+            />
           </main>
           <Sidebar visible={false}>
             <div className="settings">
@@ -32,27 +45,27 @@ class App extends React.Component {
               <Radio
                 id="shape-8"
                 name="shape"
-                value="8-figure"
+                value="shape-lines-with-dots-8"
                 checked={true}
-                onChange={(value) => this.test(value)}
+                onChange={(value) => this.setState({ svgName: value })}
                 label="8 Figure"
               />
 
               <Radio
                 id="shape-line-vertical"
                 name="shape"
-                value="shape-line-vertical"
+                value="shape-lines-with-dots-vertical"
                 checked={false}
-                onChange={(value) => this.test(value)}
+                onChange={(value) => this.setState({ svgName: value })}
                 label="Vertical Line"
               />
 
               <Radio
                 id="shape-line-horizontal"
                 name="shape"
-                value="shape-line-horizontal"
+                value="shape-lines-with-dots-horizontal"
                 checked={false}
-                onChange={(value) => this.test(value)}
+                onChange={(value) => this.setState({ svgName: value })}
                 label="Horizontal Line"
               />
 
@@ -61,7 +74,7 @@ class App extends React.Component {
                 name="shape"
                 value="shape-cross"
                 checked={false}
-                onChange={(value) => this.test(value)}
+                onChange={(value) => this.setState({ svgName: value })}
                 label="Cross"
               />
 
@@ -70,7 +83,7 @@ class App extends React.Component {
                 name="shape"
                 value="shape-meeting-lines-vertical"
                 checked={false}
-                onChange={(value) => this.test(value)}
+                onChange={(value) => this.setState({ svgName: value })}
                 label="Meeting Lines Vertical"
               />
 
@@ -79,7 +92,7 @@ class App extends React.Component {
                 name="shape"
                 value="shape-meeting-triangles-vertical"
                 checked={false}
-                onChange={(value) => this.test(value)}
+                onChange={(value) => this.setState({ svgName: value })}
                 label="Meeting Triangles Vertical"
               />
 
@@ -104,7 +117,9 @@ class App extends React.Component {
               />
 
               <Rangeslider
-                onChange={(value) => this.test(value)}
+                onChange={(value) =>
+                  this.setState({ colorPrimaryIntensity: value })
+                }
                 id="color-intensity-circle"
                 min="0"
                 max="255"

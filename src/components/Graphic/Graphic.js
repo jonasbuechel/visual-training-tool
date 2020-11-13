@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Color from "../../helpers/color";
 import "./Graphic.css";
-import { ReactComponent as SVG } from "../Exercise/img/shape-cross.svg";
 
-class Graphic extends React.Component {
-  render1() {
-    // TODO: SOLUTION 2 - static, but injects an SVG without using an object :)
-    return <SVG className="graphic" />;
+function Graphic(props) {
+  function getSrc(svgName) {
+    return require(`../Exercise/img/${svgName}.svg`);
   }
 
-  render() {
-    // TODO: SOLUTION 1 - more dynamic, retest if it still works after a build!
-    const test = require("../Exercise/img/shape-cross.svg");
-    return (
-      <object className="graphic" data={test} type="image/svg+xml">
-        Graphic
-      </object>
-    );
+  function applyColors() {
+    const primary = Color.getPrimary(props.colorPrimaryIntensity, "dark");
+    const secondary = Color.getSecondary(props.colorSecondaryIntensity, "dark");
+
+    console.log(primary, secondary);
   }
+
+  useEffect(() => {
+    applyColors();
+  });
+
+  return (
+    <object
+      className="graphic"
+      data={getSrc(props.svgName)}
+      type="image/svg+xml"
+    >
+      Graphic
+    </object>
+  );
 }
 
 export default Graphic;
